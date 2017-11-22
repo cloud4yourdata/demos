@@ -4,8 +4,9 @@ from azure.servicebus import ServiceBusService
 
 serviceNamespace  = "bdpmydevlabs"
 sharedAccessKeyName = "RootManageSharedAccessKey"
-sharedAccessKeyValue = "3Yk7mkZATy0Ea1Vpe8S1LdEMAyNA/1dmZ0IC4t1wgCI="
+sharedAccessKeyValue = "t1oWq1KYT8eQJoSkqVQaPFBsdgtlTK7MtfU+A/FLSYk="
 eventHubName = "mydemodevices"
+
 
 devices = []
 for x in range(1, 11):
@@ -17,6 +18,6 @@ while True:
   for dev in devices:
        dev.read()
        eventData = dev.getJson()
-       sbs.send_event(eventHubName, eventData)
+       r = sbs.send_event(eventHubName, eventData)
        print(eventData)
   time.sleep(5)

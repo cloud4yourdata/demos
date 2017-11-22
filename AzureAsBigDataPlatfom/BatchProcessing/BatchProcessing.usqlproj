@@ -20,13 +20,45 @@
     <OutputPath>bin\Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Script Include="Script.usql">
+    <Script Include="CallSummaryReport.usql" />
+    <Script Include="Devices.usql" />
+    <Script Include="Init\CreateDb.usql" />
+    <Script Include="Init\RegisterExtenstions.usql" />
+    <Script Include="Init\SP\ComputeDailyStats.usql" />
+    <Script Include="Init\SP\ComputeSummaryReport.usql" />
+    <Script Include="Stats.usql">
       <RecurrenceName>Script_ADLVSTool</RecurrenceName>
       <RecurrenceId>716401c4-e41a-47ae-b46a-21b0ed68b3cb</RecurrenceId>
     </Script>
-    <ScriptCode Include="Script.usql.cs">
-      <DependentUpon>Script.usql</DependentUpon>
+    <Script Include="SummaryReport.usql" />
+    <ScriptCode Include="CallSummaryReport.usql.cs">
+      <DependentUpon>CallSummaryReport.usql</DependentUpon>
     </ScriptCode>
+    <ScriptCode Include="Devices.usql.cs">
+      <DependentUpon>Devices.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="Init\CreateDb.usql.cs">
+      <DependentUpon>Init\CreateDb.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="Init\RegisterExtenstions.usql.cs">
+      <DependentUpon>Init\RegisterExtenstions.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="Init\SP\ComputeDailyStats.usql.cs">
+      <DependentUpon>Init\SP\ComputeDailyStats.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="Init\SP\ComputeSummaryReport.usql.cs">
+      <DependentUpon>Init\SP\ComputeSummaryReport.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="Stats.usql.cs">
+      <DependentUpon>Stats.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="SummaryReport.usql.cs">
+      <DependentUpon>SummaryReport.usql</DependentUpon>
+    </ScriptCode>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Init" />
+    <Folder Include="Init\SP" />
   </ItemGroup>
   <Import Project="$(AppData)\Microsoft\DataLake\MsBuild\1.0\Usql.targets" />
 </Project>

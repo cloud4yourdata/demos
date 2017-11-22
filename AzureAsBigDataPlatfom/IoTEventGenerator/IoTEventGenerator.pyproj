@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>5aa21ee5-6e6a-4cf0-a28f-017697f2848f</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>HistoricalDataGenerator.py</StartupFile>
+    <StartupFile>IoTEventGenerator.py</StartupFile>
     <SearchPath>Modules</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -26,6 +26,9 @@
     </Compile>
     <Compile Include="IoTEventGenerator.py" />
     <Compile Include="Modules\devices.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SampleJsonRequests.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
