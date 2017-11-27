@@ -23,5 +23,18 @@
     <ADFConfigFileToPublish>
     </ADFConfigFileToPublish>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Dependencies\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Script Include="ADLA-USQL.json" />
+    <Script Include="ADLDemoStore.json" />
+    <Script Include="DailyStats.json" />
+    <Script Include="DevicesRefs-BS.json" />
+    <Script Include="InputDevices.json" />
+    <Script Include="MeasurementsBatchProcessor.json" />
+    <Script Include="OutputDevices.json" />
+    <Script Include="SummaryReport.json" />
+  </ItemGroup>
   <Import Project="$(AppData)\Microsoft\DataFactory Tools for Visual Studio\MsBuild\1.0\DataFactory.targets" />
 </Project>

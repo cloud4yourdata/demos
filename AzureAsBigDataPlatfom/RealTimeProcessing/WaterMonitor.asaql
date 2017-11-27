@@ -1,4 +1,5 @@
-﻿SELECT
+﻿--POWER BI
+SELECT
 	m.humidity AS Humidity,
 	m.temperature AS Temperature,	
     m.waterLevel AS waterLevel,
@@ -12,12 +13,13 @@ FROM
     JOIN [Devices] AS d ON d.ID = m.ID
 	WHERE m.ID = 5;
 
-
+--RAW DATA -> ADLS
 SELECT * 
 INTO [RawData]
 FROM [Input] AS m
     TIMESTAMP BY m.TIMESTAMP;
 
+--MAX LEVEL ALERTS
 WITH  AvgWaterLevel AS
 (
 SELECT  m.ID,
