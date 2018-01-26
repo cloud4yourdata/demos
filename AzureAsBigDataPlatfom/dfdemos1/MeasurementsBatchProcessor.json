@@ -95,10 +95,52 @@
         },
         "name": "Compute Summary Report",
         "linkedServiceName": "ADLA-USQL"
+      },
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "AzureDataLakeStoreSource",
+            "recursive": false
+          },
+          "sink": {
+            "type": "SqlSink",
+            "writeBatchSize": 0,
+            "writeBatchTimeout": "00:00:00"
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "columnMappings": "objectId:ObjectId,MeasDate:MeasDate,minWaterLevel:MinWaterLevel,maxWaterLevel:MaxWaterLevel,avgWaterLevel:AvgWaterLevel,minTemperature:MinTemperature,maxTemperature:MaxTemperature,avgTemperature:AvgTemperature,minHumidity:MinHumidity,maxHumidity:MaxHumidity,avgHumidity:AvgHumidity"
+          }
+        },
+        "inputs": [
+          {
+            "name": "DailyStats"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "OnPremSQLDailyStats"
+          }
+        ],
+        "policy": {
+          "timeout": "1.00:00:00",
+          "concurrency": 1,
+          "executionPriorityOrder": "NewestFirst",
+          "style": "StartOfInterval",
+          "retry": 3,
+          "longRetry": 0,
+          "longRetryInterval": "00:00:00"
+        },
+        "scheduler": {
+          "frequency": "Day",
+          "interval": 1
+        },
+        "name": "Copy-Daily-Stats-To-OnPrem-SQL"
       }
     ],
-    "start": "2017-11-20T23:00:00Z",
-    "end": "2017-11-30T23:00:00Z",
+    "start": "2018-01-22T23:00:00Z",
+    "end": "2018-01-26T23:00:00Z",
     "isPaused": false,
     "pipelineMode": "Scheduled"
   },

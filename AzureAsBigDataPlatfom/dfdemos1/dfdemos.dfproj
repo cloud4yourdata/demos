@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>03e5983a-1092-47fc-8068-6b1e52644b7c</ProjectGuid>
+    <ProjectGuid>f842cd58-6d79-4e5d-9062-73dcae7cd521</ProjectGuid>
     <OutputType>File</OutputType>
     <AssemblyName>DataFactory</AssemblyName>
     <ApiVersion>2015-09-01</ApiVersion>
@@ -23,18 +23,5 @@
     <ADFConfigFileToPublish>
     </ADFConfigFileToPublish>
   </PropertyGroup>
-  <ItemGroup>
-    <Folder Include="Dependencies\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Script Include="ADLA-USQL.json" />
-    <Script Include="ADLDemoStore.json" />
-    <Script Include="DailyStats.json" />
-    <Script Include="DevicesRefs-BS.json" />
-    <Script Include="InputDevices.json" />
-    <Script Include="MeasurementsBatchProcessor.json" />
-    <Script Include="OutputDevices.json" />
-    <Script Include="SummaryReport.json" />
-  </ItemGroup>
   <Import Project="$(AppData)\Microsoft\DataFactory Tools for Visual Studio\MsBuild\1.0\DataFactory.targets" />
 </Project>

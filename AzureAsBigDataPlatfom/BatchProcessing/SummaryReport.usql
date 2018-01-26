@@ -23,6 +23,7 @@ DECLARE @dailyData string = @"/mySamples/DevicesEvents/Results/{date}.csv";
 
 @dailyRS =
     EXTRACT objectId int,
+            measDate DateTime,
             minWaterLevel int,
             maxWaterLevel int,
             avgWaterLevel int,

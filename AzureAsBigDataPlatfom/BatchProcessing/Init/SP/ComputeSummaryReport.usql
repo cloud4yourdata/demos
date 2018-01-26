@@ -27,15 +27,16 @@ AS dev
 
     @dailyRS =
         EXTRACT objectId int,
-                minWaterLevel int,
-                maxWaterLevel int,
-                avgWaterLevel int,
-                minTemperature int,
-                maxTemperature int,
-                avgTemperature int,
-                minHumidity int,
-                maxHumidity int,
-                avgHumidity int,
+                measDate DateTime,
+                minWaterLevel double,
+                maxWaterLevel double,
+                avgWaterLevel double,
+                minTemperature double,
+                maxTemperature double,
+                avgTemperature double,
+                minHumidity double,
+                maxHumidity double,
+                avgHumidity double,
                 date string
         FROM @dailyData
         USING Extractors.Csv(skipFirstNRows : 1);

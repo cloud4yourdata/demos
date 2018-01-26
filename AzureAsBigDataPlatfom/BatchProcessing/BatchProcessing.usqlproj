@@ -22,6 +22,7 @@
   <ItemGroup>
     <Script Include="CallSummaryReport.usql" />
     <Script Include="Devices.usql" />
+    <Script Include="EventDataCaptureAvro.usql" />
     <Script Include="Init\CreateDb.usql" />
     <Script Include="Init\RegisterExtenstions.usql" />
     <Script Include="Init\SP\ComputeDailyStats.usql" />
@@ -36,6 +37,9 @@
     </ScriptCode>
     <ScriptCode Include="Devices.usql.cs">
       <DependentUpon>Devices.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="EventDataCaptureAvro.usql.cs">
+      <DependentUpon>EventDataCaptureAvro.usql</DependentUpon>
     </ScriptCode>
     <ScriptCode Include="Init\CreateDb.usql.cs">
       <DependentUpon>Init\CreateDb.usql</DependentUpon>

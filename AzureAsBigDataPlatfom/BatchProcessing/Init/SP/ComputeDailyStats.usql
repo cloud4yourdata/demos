@@ -9,11 +9,11 @@ BEGIN
     @ds =
         EXTRACT objectId int,
                 timestamp DateTime,
-                waterLevel int,
-                temperature int,
-                humidity int,
+                waterLevel double,
+                temperature double,
+                humidity double,
                 eventProcessedUtcTime DateTime,
-                partitionId int,
+                partitionId double,
                 eventEnqeuedUtcTime DateTime,
                 filename string
         FROM @inputData
@@ -21,8 +21,8 @@ BEGIN
 
     @stats =
         SELECT objectId,
-               MIN(waterLevel)
-AS minWaterLevel,
+               eventEnqeuedUtcTime.Date AS MeasDate,
+               MIN(waterLevel) AS minWaterLevel,
                MAX(waterLevel) AS maxWaterLevel,
                AVG(waterLevel) AS avgWaterLevel,
                MIN(temperature) AS minTemperature,
