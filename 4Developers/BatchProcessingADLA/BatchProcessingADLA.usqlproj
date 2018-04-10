@@ -20,10 +20,21 @@
     <OutputPath>bin\Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Script Include="Script.usql" />
-    <ScriptCode Include="Script.usql.cs">
-      <DependentUpon>Script.usql</DependentUpon>
+    <Script Include="DailyStats.usql" />
+    <Script Include="Init\CreateDb.usql" />
+    <Script Include="Init\RegisterExtenstions.usql" />
+    <ScriptCode Include="DailyStats.usql.cs">
+      <DependentUpon>DailyStats.usql</DependentUpon>
     </ScriptCode>
+    <ScriptCode Include="Init\CreateDb.usql.cs">
+      <DependentUpon>Init\CreateDb.usql</DependentUpon>
+    </ScriptCode>
+    <ScriptCode Include="Init\RegisterExtenstions.usql.cs">
+      <DependentUpon>Init\RegisterExtenstions.usql</DependentUpon>
+    </ScriptCode>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Init" />
   </ItemGroup>
   <!-- check for SDK Build target in current path then in USQLSDKPath in the case of command line build -->
   <Import Project="UsqlSDKBuild.targets" Condition="'$(BuildingInsideVisualStudio)' != 'true' And  Exists('UsqlSDKBuild.targets')" />

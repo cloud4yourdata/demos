@@ -46,7 +46,10 @@ namespace SweetsMachineSimulatorApp
                     AddLogTemp(e.ToString());
                     break;
             }
-           // _eventHubSender.SendDataAsync(ConvertToEventHub(e));
+            if (rbSendToCloud.Checked)
+            {
+                _eventHubSender.SendDataAsync(ConvertToEventHub(e));
+            }
             _localFileStore.Save(ConvertToLocalStoreData(e));
 
         }

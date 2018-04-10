@@ -35,7 +35,7 @@ namespace SweetMachine.LocalStore
             var csvData = $"{dataEvent.SerialNumber},{dataEvent.EventType},{dataEvent.EventValue1}," +
                  $"{dataEvent.EventValue2},{dataEvent.EventValue3}," +
                  $"{time},{time}," +
-                 $"{dataEvent.PartitionId}" +
+                 $"{dataEvent.PartitionId}," +
                  $"{time}{System.Environment.NewLine}";
             File.AppendAllText(_filePath, csvData);
         }

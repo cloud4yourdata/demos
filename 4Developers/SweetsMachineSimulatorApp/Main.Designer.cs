@@ -34,6 +34,7 @@
             this.rtbTemp = new System.Windows.Forms.RichTextBox();
             this.rtbLog = new System.Windows.Forms.RichTextBox();
             this.btnLoad = new System.Windows.Forms.Button();
+            this.rbSendToCloud = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,11 +96,23 @@
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
+            // rbSendToCloud
+            // 
+            this.rbSendToCloud.AutoSize = true;
+            this.rbSendToCloud.Location = new System.Drawing.Point(45, 108);
+            this.rbSendToCloud.Name = "rbSendToCloud";
+            this.rbSendToCloud.Size = new System.Drawing.Size(118, 21);
+            this.rbSendToCloud.TabIndex = 4;
+            this.rbSendToCloud.TabStop = true;
+            this.rbSendToCloud.Text = "Send to Cloud";
+            this.rbSendToCloud.UseVisualStyleBackColor = true;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(688, 866);
+            this.Controls.Add(this.rbSendToCloud);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnStop);
@@ -111,6 +124,7 @@
             this.Text = "SweetsMachineSimulatorApp";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -122,6 +136,7 @@
         private System.Windows.Forms.RichTextBox rtbLog;
         private System.Windows.Forms.RichTextBox rtbTemp;
         private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.RadioButton rbSendToCloud;
     }
 }
 

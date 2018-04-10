@@ -34,7 +34,7 @@ namespace SweetsMachine.EventHub.Sender
             {
                 if (!eventDataBatch.TryAdd(eventData))
                 {
-                    await _eventHubClient.SendAsync(eventDataBatch.ToEnumerable());
+                    await _eventHubClient.SendAsync(eventDataBatch);
                     eventDataBatch = _eventHubClient.CreateBatch();
                     eventDataBatch.TryAdd(eventData);
                 }
@@ -42,7 +42,7 @@ namespace SweetsMachine.EventHub.Sender
 
             if (eventDataBatch.Count > 0)
             {
-               await _eventHubClient.SendAsync(eventDataBatch.ToEnumerable());
+               await _eventHubClient.SendAsync(eventDataBatch);
             }
         }
 

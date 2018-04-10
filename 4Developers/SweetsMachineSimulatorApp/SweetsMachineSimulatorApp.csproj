@@ -152,7 +152,7 @@
       <Name>SweetMachine.Simulator</Name>
     </ProjectReference>
     <ProjectReference Include="..\SweetsMachine.EventHub.Sender\SweetsMachine.EventHub.Sender.csproj">
-      <Project>{22c97535-6605-4706-9dcb-c2f3de05cc49}</Project>
+      <Project>{f780574b-9b65-4b7e-903e-13efb58c1a8b}</Project>
       <Name>SweetsMachine.EventHub.Sender</Name>
     </ProjectReference>
   </ItemGroup>
