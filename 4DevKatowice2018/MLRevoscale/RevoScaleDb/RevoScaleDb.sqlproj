@@ -23,6 +23,9 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <PermissionSet>UNSAFE</PermissionSet>
+    <Trustworthy>True</Trustworthy>
+    <NonTransactedFileStreamAccess>FULL</NonTransactedFileStreamAccess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -68,7 +71,14 @@
     <Build Include="dbo\Tables\Models.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Scripts\PredPython.sql" />
-    <None Include="Scripts\000-LoadData.sql" />
+    <None Include="Scripts\003-PredPython.sql" />
+    <None Include="Scripts\002-LoadData.sql" />
+    <None Include="Scripts\004-RevoscaleR.sql" />
+    <None Include="Scripts\000-EnableExternalScripts.sql" />
+    <None Include="Scripts\005-LoadModel.sql" />
+    <None Include="Scripts\006-PredRevoscaleR.sql" />
+    <None Include="Scripts\001-Python.sql" />
+    <None Include="Scripts\007-PredRevoscalePy.sql" />
+    <None Include="Scripts\008-PredRealTimeScoring.sql" />
   </ItemGroup>
 </Project>
