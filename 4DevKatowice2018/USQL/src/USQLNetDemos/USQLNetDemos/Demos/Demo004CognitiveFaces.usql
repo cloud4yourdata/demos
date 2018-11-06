@@ -5,10 +5,10 @@ REFERENCE ASSEMBLY ImageEmotion;
 
 
 DECLARE @input string = @"D:\AppData\BIGDATA\Images\{FileName}";
-DECLARE @outputFileKids string = @"d:\Repos\Cloud4YourData\Demos\4DevKrakow2018\output\kids.csv";
-DECLARE @outputFileRawFaces string = @"d:\Repos\Cloud4YourData\Demos\4DevKrakow2018\output\rawFaces.csv";
-DECLARE @outputFileEmotionsFaces string = @"d:\Repos\Cloud4YourData\Demos\4DevKrakow2018\output\emotionsFaces.csv";
-DECLARE @outputFileHappy  string = @"d:\Repos\Cloud4YourData\Demos\4DevKrakow2018\output\happyFaces.csv";
+DECLARE @outputFileKids string = @"d:\Repos\Cloud4YourData\Demos\4DevKatowice2018\USQL\output\kids.csv";
+DECLARE @outputFileRawFaces string = @"d:\Repos\Cloud4YourData\Demos\4DevKatowice2018\USQL\output\rawFaces.csv";
+DECLARE @outputFileEmotionsFaces string = @"d:\Repos\Cloud4YourData\Demos\4DevKatowice2018\USQL\output\emotionsFaces.csv";
+DECLARE @outputFileHappy  string = @"d:\Repos\Cloud4YourData\Demos\4DevKatowice2018\USQL\output\happyFaces.csv";
 
 ///Extract faces via Extractor
 @rawFaces =

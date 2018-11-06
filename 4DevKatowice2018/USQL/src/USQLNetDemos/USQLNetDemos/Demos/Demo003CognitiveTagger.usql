@@ -3,8 +3,8 @@ REFERENCE ASSEMBLY ImageCommon;
 REFERENCE ASSEMBLY ImageTagging;
 
 DECLARE @input string = @"D:\AppData\BIGDATA\Images\{FileName}";
-DECLARE @outputFileCars string = @"d:\Repos\Cloud4YourData\Demos\4DevKrakow2018\output\cars.csv";
-DECLARE @outputFileObjects string = @"d:\Repos\Cloud4YourData\Demos\4DevKrakow2018\output\objects.csv";
+DECLARE @outputFileCars string = @"d:\Repos\Cloud4YourData\Demos\4DevKatowice2018\USQL\output\cars.csv";
+DECLARE @outputFileObjects string = @"d:\Repos\Cloud4YourData\Demos\4DevKatowice2018\USQL\output\objects.csv";
 
 ///Extract images
 @imgs =
@@ -48,4 +48,5 @@ USING Outputters.Csv();
 
 OUTPUT @objects
 TO @outputFileObjects
+ORDER BY FileName
 USING Outputters.Csv();

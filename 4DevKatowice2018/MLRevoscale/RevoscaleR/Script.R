@@ -1,7 +1,7 @@
 workDir <- "d:/Repos/Cloud4YourData/Demos/4DevKatowice2018/MLRevoscale/Data/Revoscale/"
 outPath <- paste0(workDir,"wines.xdf")
-sqlConnString <- "Driver=SQL Server; server=.; 
-                     database=RevoScaleDb; Trusted_Connection = True;"
+sqlConnString <- "Driver=SQL Server; server=.; database=RevoScaleDb; Trusted_Connection = True;"
+
 sqlCC <- RxInSqlServer(connectionString = sqlConnString, numTasks = 1)
 sqlQuery <-"SELECT Facidity, Vacidity, Citric, Sugar, Chlorides, 
                Fsulfur, Tsulfur, Density, pH,Sulphates, Alcohol,
@@ -28,12 +28,12 @@ rxGetVarInfo(wines)
 
 
 transformColor <- function(dataList) {
-    dataList$ColNum <- ifelse(dataList$Color == "red",1,0)
+    dataList$ColNum <- ifelse(dataList$Color == "red", 1, 0)
     return(dataList)
 }
    
 
-wines_data<-rxDataStep(inData = wines,
+wines_data <- rxDataStep(inData = wines,
                    #transforms = list(ColNum = ifelse(Color == "red", 1, 0)),
                    transformFunc = transformColor,
                    rowsPerRead = 250,
@@ -72,7 +72,7 @@ colNames <- colnames(wines_train)
 modelFormula <- as.formula(paste("Quality ~", paste(colNames[!colNames %in% c("Quality", "splitVar")], collapse = " + ")))
 modelFormula
 #train model
-model = rxDForest(modelFormula, data = wines_train,method = "anova")
+model = rxDForest(modelFormula, data = wines_train, method = "anova")
 summary(model)
 #
 wines_test <- rxDataStep(inData = wines_test,
@@ -91,7 +91,9 @@ library(MLmetrics)
 R2_Score(pred$QualityPred, pred$Quality)
 
 #Serialize model
+rxGetComputeContext()
 rxSetComputeContext(RxLocalSeq())
+rxGetComputeContext()
 model_ser <- rxSerializeModel(model, realtimeScoringOnly = TRUE)
 
 writeBin(model_ser, paste0(workDir, "model.rsm"))

@@ -35,7 +35,7 @@ USING ImageColorsProcessor = ADLAExt.Processors.ImageColorProducer;
              EXPLODE(colors) AS colors(order, colorName);
 //Save image
 OUTPUT @ds
-TO @"d:\Repos\Cloud4YourData\Demos\4DevKrakow2018\output\colorResult.csv"
+TO @"d:\Repos\Cloud4YourData\Demos\4DevKatowice2018\USQL\output\colorResult.csv"
 ORDER BY fileName,
          order
 USING Outputters.Csv();
